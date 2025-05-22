@@ -18,7 +18,7 @@
 @section('content')
     <div class="p-3 d-flex flex-column">
         <div class="p-0" style="border: solid 1px #337AB7; border-radius: 5px;">
-            <h5 class="border rounded-top text-white text-center pt-2 pb-2" style="background-color: #337AB7;">Informe Producción Líneas Personales</h5>
+            <h5 class="border rounded-top text-white text-center pt-2 pb-2" style="background-color: #337AB7;">Radicados</h5>
 
             <div class="row pe-3 mt-3">
                 <div class="col-12 d-flex justify-content-end">
