@@ -18,7 +18,7 @@
 @section('content')
     <div class="p-3 d-flex flex-column">
         <div class="p-0" style="border: solid 1px #337AB7; border-radius: 5px;">
-            <h5 class="border rounded-top text-white text-center pt-2 pb-2" style="background-color: #337AB7;">Radicados</h5>
+            <h5 class="border rounded-top text-white text-center pt-2 pb-2" style="background-color: #337AB7;">Informe Producción Líneas Personales</h5>
 
             <div class="row pe-3 mt-3">
                 <div class="col-12 d-flex justify-content-end">
@@ -55,6 +55,7 @@
                                 <th class="text-center align-content-center">Póliza Asistente</th>
                                 <th class="text-center align-content-center">Identificación Tomador</th>
                                 <th class="text-center align-content-center">Nombres Tomador</th>
+                                <th class="text-center align-content-center">Ciudad</th>
                                 <th class="text-center align-content-center">Dirección Tomador</th>
                                 <th class="text-center align-content-center">Celular Tomador</th>
                                 <th class="text-center align-content-center">Correo Tomador</th>
@@ -71,6 +72,8 @@
                                 <th class="text-center align-content-center">Gerente</th>
                                 <th class="text-center align-content-center">Estado Póliza</th>
                                 <th class="text-center align-content-center">Fecha Cancelación</th>
+                                <th class="text-center align-content-center">Medio Pago</th>
+                                <th class="text-center align-content-center">Financiera</th>
                                 <th class="text-center align-content-center bg-warning-subtle">Cédula</th>
                                 <th class="text-center align-content-center bg-warning-subtle">Matrícula</th>
                                 <th class="text-center align-content-center bg-warning-subtle">Asegurabilidad</th>
@@ -92,6 +95,7 @@
                                     <td class="text-center align-content-center">{{$radicado->poliza_asistente}}</td>
                                     <td class="text-center align-content-center">{{$radicado->identificacion_tomador}}</td>
                                     <td class="text-center align-content-center">{{$radicado->tomador}}</td>
+                                    <td class="text-center align-content-center">{{$radicado->ciudad}}</td>
                                     <td class="text-center align-content-center">{{$radicado->direccion_tomador}}</td>
                                     <td class="text-center align-content-center">{{$radicado->celular_tomador}}</td>
                                     <td class="text-center align-content-center">{{$radicado->correo_tomador}}</td>
@@ -108,6 +112,8 @@
                                     <td class="text-center align-content-center">{{$radicado->gerente_comercial}}</td>
                                     <td class="text-center align-content-center">{{$radicado->estado_poliza}}</td>
                                     <td class="text-center align-content-center">{{$radicado->fecha_cancelacion}}</td>
+                                    <td class="text-center align-content-center">{{$radicado->medio_pago}}</td>
+                                    <td class="text-center align-content-center">{{$radicado->financiera}}</td>
 
                                     @if (isset($radicado->file_cedula) && !empty($radicado->file_cedula) && !is_null($radicado->file_cedula))
                                         <td class="text-center align-content-center bg-warning-subtle"><a href="storage/{{$radicado->file_cedula}}" target="_blank" class="text-decoration-none">Cédula</a></td>

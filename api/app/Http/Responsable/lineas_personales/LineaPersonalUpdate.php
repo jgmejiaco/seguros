@@ -29,6 +29,7 @@ class LineaPersonalUpdate implements Responsable
                 $radicado->poliza_asistente = $request->input('poliza_asistente');
                 $radicado->identificacion_tomador = $request->input('identificacion_tomador');
                 $radicado->tomador = $request->input('tomador');
+                $radicado->ciudad = $request->input('ciudad');
                 $radicado->direccion_tomador = $request->input('direccion_tomador');
                 $radicado->celular_tomador = $request->input('celular_tomador');
                 $radicado->correo_tomador = $request->input('correo_tomador');
@@ -42,6 +43,8 @@ class LineaPersonalUpdate implements Responsable
                 $radicado->id_consultor = $request->input('id_consultor');
                 $radicado->id_estado_poliza = $request->input('id_estado_poliza');
                 $radicado->fecha_cancelacion = $request->input('fecha_cancelacion');
+                $radicado->id_medio_pago = $request->input('id_medio_pago');
+                $radicado->id_financiera = $request->input('id_financiera');
                 $radicado->file_cedula = $request->input('file_cedula');
                 $radicado->file_matricula = $request->input('file_matricula');
                 $radicado->file_asegurabilidad = $request->input('file_asegurabilidad');

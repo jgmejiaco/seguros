@@ -81,18 +81,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 // =====================================================================
 // =====================================================================
 
-// FRECUENCIAS
-$router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('frecuencia_index', 'frecuencias\FrecuenciasController@index');
-    $router->post('consultar_frecuencia', 'frecuencias\FrecuenciasController@consultarFrecuencia');
-    $router->post('frecuencia_store', 'frecuencias\FrecuenciasController@store');
-    $router->put('frecuencia_update/{idFrecuencia}', 'frecuencias\FrecuenciasController@update');
-    $router->get('frecuencia_edit/{idFrecuencia}', 'frecuencias\FrecuenciasController@edit');
-});
-
-// =====================================================================
-// =====================================================================
-
 // ESTADOS
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('estado_index', 'estados\EstadosController@index');
@@ -105,12 +93,49 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 // =====================================================================
 // =====================================================================
 
+// FRECUENCIAS
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('frecuencia_index', 'frecuencias\FrecuenciasController@index');
+    $router->post('consultar_frecuencia', 'frecuencias\FrecuenciasController@consultarFrecuencia');
+    $router->post('frecuencia_store', 'frecuencias\FrecuenciasController@store');
+    $router->put('frecuencia_update/{idFrecuencia}', 'frecuencias\FrecuenciasController@update');
+    $router->get('frecuencia_edit/{idFrecuencia}', 'frecuencias\FrecuenciasController@edit');
+});
+
+// =====================================================================
+// =====================================================================
+
+// FINANCIERAS
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('financiera_index', 'financieras\FinancierasController@index');
+    $router->post('consultar_financiera', 'financieras\FinancierasController@consultarFinanciera');
+    $router->post('financiera_store', 'financieras\FinancierasController@store');
+    $router->put('financiera_update/{idFinanciera}', 'financieras\FinancierasController@update');
+    $router->get('financiera_edit/{idFinanciera}', 'financieras\FinancierasController@edit');
+});
+
+// =====================================================================
+// =====================================================================
+
+
 // GERENTES
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('gerente_index', 'gerentes\GerentesController@index');
     $router->post('consultar_gerente', 'gerentes\GerentesController@consultarGerente');
     $router->post('gerente_store', 'gerentes\GerentesController@store');
     $router->put('gerente_update/{idGerente}', 'gerentes\GerentesController@update');
+});
+
+// =====================================================================
+// =====================================================================
+
+// MEDIOS DE PAGO
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('medio_pago_index', 'medios_pago\MediosPagoController@index');
+    $router->post('consultar_medio_pago', 'medios_pago\MediosPagoController@consultarMedioPago');
+    $router->post('medio_pago_store', 'medios_pago\MediosPagoController@store');
+    $router->put('medio_pago_update/{idMedioPago}', 'medios_pago\MediosPagoController@update');
+    $router->get('medio_pago_edit/{idMedioPago}', 'medios_pago\MediosPagoController@edit');
 });
 
 // =====================================================================

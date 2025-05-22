@@ -16,6 +16,7 @@ class LineaPersonalStore implements Responsable
         $polizaAsistente = $request->input('poliza_asistente');
         $identificacionTomador = $request->input('identificacion_tomador');
         $tomador = $request->input('tomador');
+        $ciudad = $request->input('ciudad');
         $direccionTomador = $request->input('direccion_tomador');
         $celularTomador = $request->input('celular_tomador');
         $correoTomador = $request->input('correo_tomador');
@@ -29,6 +30,8 @@ class LineaPersonalStore implements Responsable
         $idConsultor = $request->input('id_consultor');
         $idEstadoPoliza = $request->input('id_estado_poliza');
         $fechaCancelacion = $request->input('fecha_cancelacion');
+        $idMedioPago = $request->input('id_medio_pago');
+        $idFinanciera = $request->input('id_financiera');
 
         $fileCedula = $request->input('file_cedula');
         $fileMatricula = $request->input('file_matricula');
@@ -49,6 +52,7 @@ class LineaPersonalStore implements Responsable
                 'poliza_asistente' => $polizaAsistente,
                 'identificacion_tomador' => $identificacionTomador,
                 'tomador' => $tomador,
+                'ciudad' => $ciudad,
                 'direccion_tomador' => $direccionTomador,
                 'celular_tomador' => $celularTomador,
                 'correo_tomador' => $correoTomador,
@@ -62,6 +66,8 @@ class LineaPersonalStore implements Responsable
                 'id_consultor' => $idConsultor,
                 'id_estado_poliza' => $idEstadoPoliza,
                 'fecha_cancelacion' => $fechaCancelacion,
+                'id_medio_pago' => $idMedioPago,
+                'id_financiera' => $idFinanciera,
                 'file_cedula' => $fileCedula,
                 'file_matricula' => $fileMatricula,
                 'file_asegurabilidad' => $fileSolicitudAsegurabilidad,

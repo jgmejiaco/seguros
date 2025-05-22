@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Radicdos de seguros">
-        <meta name="keywords" content="radicados de seguros">
-        <meta name="author" content="Seguros">
+        <meta name="description" content="Informe de Producción de Líneas Personales Proyectat">
+        <meta name="keywords" content="Informes, producción Proyectat">
+        <meta name="author" content="JGMC Digital">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Seguros - @yield('title')</title>
+        <title>Proyectat - @yield('title')</title>
 
         {{-- ========================================= --}}
 
         {{-- Favicon --}}
-        <link rel="shortcut icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
 
         {{-- ========================================= --}}
 
