@@ -47,6 +47,6 @@
 
         <p>Este mensaje es automático, por favor no responder</p>
         <p>Gracias.</p>
-        <p><b>&copy; Proyectat</b></p>
+        <p><b>&copy; Seguros</b></p>
     </body>
 </html>
