@@ -94,6 +94,12 @@
                                         <a href="{{route('permisos.index')}}" class="dropdown-item text-black hover-li">Permisos</a>
                                     </li>
                                 @endif
+                                
+                                @if($permisos->tienePermisoRuta('audits.index'))
+                                    <li class="nav-item">
+                                        <a href="{{route('audits.index')}}" class="dropdown-item text-black hover-li">Auditorias</a>
+                                    </li>
+                                @endif
                             </ul>
                         </li>
 

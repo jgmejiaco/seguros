@@ -17,6 +17,7 @@ use App\Http\Controllers\gerentes\GerentesController;
 use App\Http\Controllers\productos\ProductosController;
 use App\Http\Controllers\ramos\RamosController;
 use App\Http\Controllers\roles\RolesController;
+use App\Http\Controllers\audits\AuditsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,4 +182,13 @@ Route::middleware(['web', 'prevent-back-history'])->group(function () {
         Route::resource('asignar_permisos', AsignarPermisosController::class)->middleware('permission');
         Route::get('consultar_permisos_rol', 'consultarPermisosRol')->name('consultar_permisos_rol')->middleware('permission');
     });
+    
+    // ===========================================================================
+    // ===========================================================================
+
+    // ASIGNAR PERMISOS
+    Route::controller(AuditsController::class)->group(function () {
+        Route::resource('audits', AuditsController::class)->middleware('permission');
+    });
 }); // FIN Route::middleware(['web', 'prevent-back-history'])
+

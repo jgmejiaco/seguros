@@ -195,3 +195,11 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('consultar_permisos_rol', 'asignar_permisos\AsignarPermisosController@consultarPermisosRol');
     $router->post('asignar_permiso_rol', 'asignar_permisos\AsignarPermisosController@store');
 });
+
+// =====================================================================
+// =====================================================================
+
+// AUDITS
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('audit_index', 'audits\AuditsController@index');
+});
