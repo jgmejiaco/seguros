@@ -75,9 +75,9 @@ class LoginController extends Controller
     {
         if (!$this->checkDatabaseConnection()) {
             return view('db_conexion');
-        } else {
-            return new LoginStore();
         }
+        
+        return new LoginStore();
     }
 
     // ======================================================================

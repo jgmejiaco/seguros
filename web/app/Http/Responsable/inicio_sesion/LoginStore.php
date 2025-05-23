@@ -42,8 +42,8 @@ class LoginStore implements Responsable
         }
 
         $user = $this->consultarUsuario($usuario);
-      
-        if(isset($user) && !empty($user) && !is_null($user)) {
+
+        if(isset($user) && !is_null($user) && $user != 'error_exception') {
 
             $contarClaveErronea = $user->clave_fallas;
 
@@ -71,12 +71,11 @@ class LoginStore implements Responsable
                 alert()->error('Error','Credenciales Inválidas');
                 return back();
             }
-        } elseif ($user == null) {
+        } elseif ($user == null && $user != 'error_exception') {
             alert()->error('Error','Este usuario no existe: ' . $usuario);
             return back();
         } else {
-            alert()->error('Error','Error al consultar el usuario. Intente de nuevo.');
-            return back();
+            return view('db_conexion');
         }
     }
 
@@ -96,15 +95,18 @@ class LoginStore implements Responsable
     private function consultarUsuario($usuario)
     {
         try {
-            $response = $this->clientApi->post($this->baseUri.'query_usuario', ['json' => ['usuario' => $usuario]]);
-            $respuesta = json_decode($response->getBody()->getContents());
+            $peticion = $this->clientApi->post($this->baseUri.'query_usuario', ['json' => ['usuario' => $usuario]]);
+            $resUsuario = json_decode($peticion->getBody()->getContents());
 
-            if(isset($respuesta) && !empty($respuesta)) {
-                return $respuesta;
+            // Verifica si contiene un error
+            if (is_object($resUsuario) && property_exists($resUsuario, 'error_exception')) {
+                return 'error_exception';
             }
+
+            return $resUsuario;
+
         } catch (Exception $e) {
-            alert()->error('Consultando el usuario de inicion de sesión!');
-            return back();
+            return 'error_exception';
         }
     }
 
