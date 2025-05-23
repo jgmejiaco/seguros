@@ -107,6 +107,7 @@ class RamoUpdate implements Responsable
     {
         try {
             $peticionRamoUpdate = $this->clientApi->put($this->baseUri . 'ramo_update/' . $idRamo, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'ramo' => ucwords(strtolower(trim($ramo))),
                     'id_estado' => $idEstado,

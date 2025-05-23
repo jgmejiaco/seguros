@@ -48,6 +48,9 @@ class EstadoStore implements Responsable
 
         try {
             $peticionEstadoStore = $this->clientApi->post($this->baseUri . 'estado_store', [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'estado' => ucwords(strtolower(trim($estado))),
                     'id_audit' => session('id_usuario')

@@ -32,6 +32,7 @@ class UsuarioDestroy implements Responsable
         try {
             $peticionCambiarEstadoUsuario = $this->clientApi->post($this->baseUri.'cambiar_estado_usuario/'. $this->idUsuario,
                 [
+                    'headers' => ['User-Agent' => request()->header('User-Agent')],
                     'json' => ['id_audit' => session('id_usuario')]
                 ]
             );

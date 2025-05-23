@@ -48,6 +48,9 @@ class FinancieraStore implements Responsable
 
         try {
             $peticionFinancieraStore = $this->clientApi->post($this->baseUri . 'financiera_store', [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'financiera' => ucwords(strtolower(trim($financiera))),
                     'id_audit' => session('id_usuario')

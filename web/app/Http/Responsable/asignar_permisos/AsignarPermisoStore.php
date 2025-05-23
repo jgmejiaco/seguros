@@ -31,6 +31,9 @@ class AsignarPermisoStore implements Responsable
             if(isset($arrayPermisos) && !is_null($arrayPermisos) && !empty($arrayPermisos)) {
                 $peticionPermisoStore = $this->clientApi->post($this->baseUri . 'asignar_permiso_rol',
                 [
+                    'headers' => [
+                        'User-Agent' => request()->header('User-Agent'),
+                    ],
                     'json' => [
                         'permissions' => $arrayPermisos,
                         'id_rol' => $idRol,

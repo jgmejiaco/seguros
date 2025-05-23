@@ -105,6 +105,7 @@ class RolUpdate implements Responsable
     {
         try {
             $peticionRolUpdate = $this->clientApi->put($this->baseUri . 'rol_update/' . $idRol, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'rol' => ucwords(strtolower(trim($rol))),
                     // 'id_estado' => $idEstado,

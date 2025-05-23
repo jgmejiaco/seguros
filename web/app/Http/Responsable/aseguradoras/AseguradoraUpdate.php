@@ -133,6 +133,9 @@ class AseguradoraUpdate implements Responsable
     {
         try {
             $peticionAseguradoraUpdate = $this->clientApi->put($this->baseUri . 'aseguradora_update/' . $idAseguradora, [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'aseguradora' => $aseguradora,
                     'nit_aseguradora' => trim($nitAseguradora),

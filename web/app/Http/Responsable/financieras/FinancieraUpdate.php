@@ -97,6 +97,9 @@ class FinancieraUpdate implements Responsable
     {
         try {
             $peticionFinancieraUpdate = $this->clientApi->put($this->baseUri . 'financiera_update/' . $idFinanciera, [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'financiera' => ucwords(strtolower(trim($financiera))),
                     'id_audit' => session('id_usuario')

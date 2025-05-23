@@ -70,6 +70,9 @@ class AseguradoraStore implements Responsable
 
         try {
             $peticionAseguradoraStore = $this->clientApi->post($this->baseUri . 'aseguradora_store', [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'aseguradora' => $aseguradora,
                     'nit_aseguradora' => trim($nitAseguradora),

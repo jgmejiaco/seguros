@@ -31,6 +31,7 @@ class PermisoStore implements Responsable
 
         try {
             $peticionPermissionStore = $this->clientApi->post($this->baseUri . 'permiso_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'permission' => $nombrePermiso,
                     'route_name' => $rutaPermiso,

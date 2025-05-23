@@ -183,6 +183,7 @@ class LineaPersonalStore implements Responsable
 
         try {
             $peticionLineaPersonalStore = $this->clientApi->post($this->baseUri.'linea_personal_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'fecha_radicado' => $fechaRadicado,
                     'id_aseguradora' => $idAseguradora,

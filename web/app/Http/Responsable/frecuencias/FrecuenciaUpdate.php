@@ -107,6 +107,9 @@ class FrecuenciaUpdate implements Responsable
     {
         try {
             $peticionFrecuenciaUpdate = $this->clientApi->put($this->baseUri . 'frecuencia_update/' . $idFrecuencia, [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'frecuencia' => ucwords(strtolower(trim($frecuencia))),
                     'id_estado' => $idEstado,

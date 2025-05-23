@@ -50,6 +50,7 @@ class UsuarioUpdate implements Responsable
 
         try {
             $peticionUsuarioUpdate = $this->clientApi->put($this->baseUri .'usuario_update/'. $idUsuario, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'nombre_usuario' => $nombreUsuario,
                     'apellido_usuario' => $apellidoUsuario,

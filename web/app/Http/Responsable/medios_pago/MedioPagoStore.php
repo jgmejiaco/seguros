@@ -48,6 +48,7 @@ class MedioPagoStore implements Responsable
 
         try {
             $peticionMedioPagoStore = $this->clientApi->post($this->baseUri . 'medio_pago_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'medio_pago' => ucwords(strtolower(trim($medioPago))),
                     'id_audit' => session('id_usuario')

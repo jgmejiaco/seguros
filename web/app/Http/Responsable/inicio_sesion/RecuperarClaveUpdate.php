@@ -51,6 +51,9 @@ class RecuperarClaveUpdate implements Responsable
                 }
 
                 $peticion = $this->clientApi->post($this->baseUri.'cambiar_clave/'.$usuIdRecuperarClave, [
+                    'headers' => [
+                        'User-Agent' => request()->header('User-Agent'),
+                    ],
                     'json' => [
                         'clave' => Hash::make($usuClaveNueva),
                         'id_audit' => session('id_usuario')

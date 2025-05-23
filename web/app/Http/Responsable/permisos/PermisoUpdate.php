@@ -33,6 +33,7 @@ class PermisoUpdate implements Responsable
 
         try {
             $peticionPermisoUpdate = $this->clientApi->put($this->baseUri . 'permiso_update/'.$this->idPermiso, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'name' => $nombrePermiso,
                     'route_name' => $rutaPermiso,

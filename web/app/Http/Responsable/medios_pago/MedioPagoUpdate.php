@@ -97,6 +97,7 @@ class MedioPagoUpdate implements Responsable
     {
         try {
             $peticionMedioPagoUpdate = $this->clientApi->put($this->baseUri . 'medio_pago_update/' . $idMedioPago, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'medio_pago' => ucwords(strtolower(trim($medioPago))),
                     'id_audit' => session('id_usuario')

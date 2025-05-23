@@ -34,6 +34,7 @@ class LineaPersonalDestroy implements Responsable
 
         try {
             $peticionEliminarRadicado = $this->clientApi->delete($this->baseUri . 'linea_personal_destroy/' . $idLineasPersonal, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => []
             ]);
             $resEliminarRadicado = json_decode($peticionEliminarRadicado->getBody()->getContents());

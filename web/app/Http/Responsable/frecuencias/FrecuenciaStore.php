@@ -49,6 +49,9 @@ class FrecuenciaStore implements Responsable
 
         try {
             $peticionFrecuenciaStore = $this->clientApi->post($this->baseUri . 'frecuencia_store', [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'frecuencia' => ucwords(strtolower(trim($frecuencia))),
                     'id_estado' => $idEstado,

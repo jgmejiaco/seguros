@@ -151,6 +151,7 @@ class ProductoUpdate implements Responsable
     {
         try {
             $peticionProductoUpdate = $this->clientApi->put($this->baseUri . 'producto_update/' . $idProducto, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'codigo_producto' => strtoupper($codigoProducto),
                     'producto' => ucwords(strtolower(trim($producto))),

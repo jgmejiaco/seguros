@@ -97,6 +97,9 @@ class EstadoUpdate implements Responsable
     {
         try {
             $peticionEstadoUpdate = $this->clientApi->put($this->baseUri . 'estado_update/' . $idEstado, [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'estado' => ucwords(strtolower(trim($estado))),
                     'id_audit' => session('id_usuario')

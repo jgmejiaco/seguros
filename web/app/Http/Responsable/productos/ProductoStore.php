@@ -69,6 +69,7 @@ class ProductoStore implements Responsable
 
         try {
             $peticionProductoStore = $this->clientApi->post($this->baseUri . 'producto_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'codigo_producto' => strtoupper($codigoProducto),
                     'producto' => ucwords(strtolower(trim($producto))),

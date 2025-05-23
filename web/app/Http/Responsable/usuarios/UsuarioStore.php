@@ -76,6 +76,7 @@ class UsuarioStore implements Responsable
 
         try {
             $peticionUsuarioStore = $this->clientApi->post($this->baseUri . 'usuario_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'nombre_usuario' => $nombreUsuario,
                     'apellido_usuario' => $apellidoUsuario,

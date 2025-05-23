@@ -267,6 +267,7 @@ class LineaPersonalUpdate implements Responsable
 
         try {
             $peticionLineaPersonalUpdate = $this->clientApi->put($this->baseUri.'linea_personal_update/'.$this->idLineasPersonal, [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'fecha_radicado' => $fechaRadicado,
                     'id_aseguradora' => $idAseguradora,

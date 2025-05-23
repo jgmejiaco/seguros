@@ -49,6 +49,7 @@ class RamoStore implements Responsable
 
         try {
             $peticionRamoStore = $this->clientApi->post($this->baseUri . 'ramo_store', [
+                'headers' => ['User-Agent' => request()->header('User-Agent')],
                 'json' => [
                     'ramo' => ucwords(strtolower(trim($ramo))),
                     'id_estado' => $idEstado,

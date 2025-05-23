@@ -117,6 +117,9 @@ class LoginStore implements Responsable
         try {
             $response = $this->clientApi->post($this->baseUri.'inactivar_usuario/'.$idUser,
             [
+                'headers' => [
+                    'User-Agent' => request()->header('User-Agent'),
+                ],
                 'json' => [
                     'id_audit' => $idUser
                 ]
@@ -136,6 +139,9 @@ class LoginStore implements Responsable
         try {
             $response = $this->clientApi->post($this->baseUri.'actualizar_clave_fallas/'.$idUsuario,
                 [
+                    'headers' => [
+                        'User-Agent' => request()->header('User-Agent'),
+                    ],
                     'json' => [
                         'clave_fallas' => $contador,
                         'id_audit' => $idUsuario
