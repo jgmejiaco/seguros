@@ -168,7 +168,7 @@ class UsuariosController extends Controller
 
     public function datosUsuario($idUsuario)
     {
-        return new Datosusuario($idUsuario);
+        return new DatosUsuario($idUsuario);
     }
 
     // ======================================================================
