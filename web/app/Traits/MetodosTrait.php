@@ -14,6 +14,8 @@ use App\Models\Producto;
 use App\Models\Ramo;
 use App\Models\Tomador;
 use App\Models\Usuario;
+use App\Models\MedioPago;
+use App\Models\Financiera;
 use App\Models\Permission;
 use App\Models\RoleHasPermission;
 
@@ -104,6 +106,8 @@ trait MetodosTrait
         view()->share('frecuencias', Frecuencia::orderBy('frecuencia','asc')->pluck('frecuencia', 'id_frecuencia'));
         view()->share('gerentes', Gerente::orderBy('gerente','asc')->pluck('gerente', 'id_gerente'));
 
+        // ======================================
+
         view()->share('productos', Producto::select(
             DB::raw("CONCAT(codigo_producto, ' - ', producto) AS productos"),
             'id_producto'
@@ -121,5 +125,8 @@ trait MetodosTrait
         ->pluck('nombre_completo', 'id_tomador'));
 
         // ======================================
+
+        view()->share('mediosPago', MedioPago::orderBy('medio_pago')->pluck('medio_pago', 'id_medio_pago'));
+        view()->share('financieras', Financiera::orderBy('financiera')->pluck('financiera', 'id_financiera'));
     }
 }

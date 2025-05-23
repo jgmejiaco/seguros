@@ -22,6 +22,8 @@ class LineaPersonalIndex implements Responsable
                 ->leftjoin('consultores', 'consultores.id_consultor', '=', 'lineas_personales.id_consultor')
                 ->leftjoin('estados as estado_poliza', 'estado_poliza.id_estado', '=', 'lineas_personales.id_estado_poliza')
                 ->leftjoin('usuarios', 'usuarios.id_usuario', '=', 'lineas_personales.id_usuario')
+                ->leftjoin('medios_pago', 'medios_pago.id_medio_pago', '=', 'lineas_personales.id_medio_pago')
+                ->leftjoin('financieras', 'financieras.id_financiera', '=', 'lineas_personales.id_financiera')
                 ->select(
                     'id_lineas_personal',
                     'fecha_radicado',
@@ -31,6 +33,7 @@ class LineaPersonalIndex implements Responsable
                     'poliza_asistente',
                     'identificacion_tomador',
                     'tomador',
+                    'ciudad',
                     'direccion_tomador',
                     'celular_tomador',
                     'correo_tomador',
@@ -54,6 +57,10 @@ class LineaPersonalIndex implements Responsable
                     'lineas_personales.id_estado_poliza',
                     'estado_poliza.estado as estado_poliza',
                     'fecha_cancelacion',
+                    'medios_pago.id_medio_pago',
+                    'medios_pago.medio_pago',
+                    'financieras.id_financiera',
+                    'financieras.financiera',
                     'file_cedula',
                     'file_matricula',
                     'file_asegurabilidad',

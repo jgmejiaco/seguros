@@ -3,7 +3,7 @@
         <div class="row p-0 w-100 align-items-lg-center justify-content-between">
             <div class="logo-container col-3 col-md-3 text-center p-0">
                 <a class="" href="{{route('inicio.index')}}">
-                    <img src="{{asset('img/proyectat_logo.png')}}" alt="Logo" width="160" height="50" class="text-center">
+                    <img src="{{asset('img/logo.png')}}" alt="Logo" width="90" height="60" class="text-center">
                 </a>
             </div>
             {{-- ========================================== --}}
@@ -53,9 +53,21 @@
                                     </li>
                                 @endif
 
+                                @if($permisos->tienePermisoRuta('financieras.index'))
+                                    <li class="nav-item">
+                                        <a href="{{route('financieras.index')}}" class="dropdown-item text-black hover-li">Financieras</a>
+                                    </li>
+                                @endif
+
                                 @if($permisos->tienePermisoRuta('frecuencias.index'))
                                     <li class="nav-item">
                                         <a href="{{route('frecuencias.index')}}" class="dropdown-item text-black hover-li">Frecuencias</a>
+                                    </li>
+                                @endif
+
+                                @if($permisos->tienePermisoRuta('medios_pago.index'))
+                                    <li class="nav-item">
+                                        <a href="{{route('medios_pago.index')}}" class="dropdown-item text-black hover-li">Medios de Pago</a>
                                     </li>
                                 @endif
 
