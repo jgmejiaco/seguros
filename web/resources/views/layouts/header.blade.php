@@ -14,11 +14,11 @@
                 <div class="collapse d-lg-flex justify-content-lg-end" id="navbarNavDropdown">
                     <ul class="navbar-nav justify-content-between">
                         <li class="nav-item dropdown">
-                            <a href="#" role="button" class="nav-link dropdown-toggle text-white fw-bold" data-bs-toggle="dropdown" aria-expanded="false">Informe Producción</a>
+                            <a href="#" role="button" class="nav-link dropdown-toggle text-white fw-bold" data-bs-toggle="dropdown" aria-expanded="false">Radicados</a>
                             <ul class="dropdown-menu bg-white">
                                 @if($permisos->tienePermisoRuta('lineas_personales.index'))
                                     <li>
-                                        <a href="{{route('lineas_personales.index')}}" class="dropdown-item text-black hover-li">Líneas Personales</a>
+                                        <a href="{{route('lineas_personales.index')}}" class="dropdown-item text-black hover-li">Ver Radicados</a>
                                     </li>
                                 @endif
                                 
