@@ -123,7 +123,9 @@ class UsuariosController extends Controller
             // Consultamos si ya existe este usuario específico
             $consultaUsuario = Usuario::where('usuario', $usuario)->first();
 
-            return response()->json($consultaUsuario);
+            if ($consultaUsuario) {
+                return response()->json($consultaUsuario);
+            }
 
         } catch (Exception $e) {
             return response()->json(['error_exception'=>$e->getMessage()]);

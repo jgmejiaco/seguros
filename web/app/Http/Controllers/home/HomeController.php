@@ -150,7 +150,7 @@ class HomeController extends Controller
             return json_decode($peticion->getBody()->getContents());
 
         } catch (Exception $e) {
-            alert()->error('Error consultando el Usuario, contacte a Soporte.');
+            alert()->error('Error consultando el Usuario del Inicio, contacte a Soporte.');
             return back();
         }
     }
