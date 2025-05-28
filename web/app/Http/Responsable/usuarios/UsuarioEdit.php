@@ -41,7 +41,6 @@ class UsuarioEdit implements Responsable
             };
 
         } catch (Exception $e) {
-            dd($e);
             alert()->error('Error', 'Editando el Usuario, contacte a Soporte.');
             return back();
         }

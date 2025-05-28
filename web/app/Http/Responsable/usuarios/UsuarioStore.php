@@ -142,7 +142,6 @@ class UsuarioStore implements Responsable
             return json_decode($queryUsuario->getBody()->getContents());
 
         } catch (Exception $e) {
-            dd($e);
             return $this->respuestaException('Consultando el usuario, contacte a Soporte.');
         }
     }
